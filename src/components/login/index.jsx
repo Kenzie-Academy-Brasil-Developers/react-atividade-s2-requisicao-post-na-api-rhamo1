@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export const Login = ({ isAuthenticated, setIsAuthenticated }) => {
   const schema = yup.object().shape({
-    email: yup.string().email().required("Campo obrigatório!"),
+    username: yup.string().username().required("Campo obrigatório!"),
     password: yup.string().required("Campo obrigatório!"),
   });
 
@@ -48,8 +48,8 @@ export const Login = ({ isAuthenticated, setIsAuthenticated }) => {
         <h2>Login</h2>
 
         <div className="formField">
-          <input type="text" placeholder="e-mail" {...register("email")} />
-          <p>{errors.email && errors.email.message}</p>
+          <input type="text" placeholder="username" {...register("username")} />
+          <p>{errors.username && errors.username.message}</p>
         </div>
 
         <div
